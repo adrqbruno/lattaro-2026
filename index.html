@@ -76,9 +76,11 @@ h1 .sub{display:block;font-family:'Bungee Shade',cursive;color:var(--parchment);
 }
 .cta-line .clap{
   -webkit-text-fill-color:initial;background:none;
-  display:inline-block;animation:clap 1.9s ease-in-out infinite;
+  display:inline-block;margin-left:.35em;
+  transform-origin:50% 85%;
+  animation:clap 1.9s ease-in-out infinite;
 }
-@keyframes clap{0%,100%{transform:rotate(0)}45%{transform:rotate(-16deg) scale(1.12)}}
+@keyframes clap{0%,100%{transform:rotate(0)}45%{transform:rotate(-10deg)}}
 .tag{
   margin:34px auto 0;max-width:30ch;line-height:1.3;
   font-family:'Rye',serif;font-weight:400;

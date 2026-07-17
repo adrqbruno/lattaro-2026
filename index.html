@@ -64,15 +64,33 @@ h1 .sub{display:block;font-family:'Bungee Shade',cursive;color:var(--parchment);
   font-size:clamp(26px,6.4vw,80px);letter-spacing:.01em;margin-top:14px;
   text-shadow:0 0 38px rgba(242,232,208,.22)}
 .cta-line{
-  margin-top:16px;color:var(--bolt);font-weight:500;
-  font-size:clamp(14px,2.2vw,19px);letter-spacing:.02em;
-  animation-delay:.95s;
+  margin-top:26px;max-width:26ch;
+  font-family:'Bungee Shade',cursive;
+  font-size:clamp(16px,2.9vw,30px);line-height:1.25;
+  background:linear-gradient(96deg,var(--potion) 0%,var(--ember) 34%,var(--spark) 66%,var(--bolt) 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 22px rgba(192,76,253,.32));
+  animation:fadeUp 1s .95s forwards, shimmer 7s linear .95s infinite;
 }
+.cta-line .clap{
+  -webkit-text-fill-color:initial;background:none;
+  display:inline-block;animation:clap 1.9s ease-in-out infinite;
+}
+@keyframes clap{0%,100%{transform:rotate(0)}45%{transform:rotate(-16deg) scale(1.12)}}
 .tag{
-  margin:30px auto 0;max-width:44ch;font-weight:300;line-height:1.65;
-  font-size:clamp(14px,2vw,18px);color:rgba(242,232,208,.72);
-  opacity:0;animation:fadeUp 1s .75s forwards;
+  margin:34px auto 0;max-width:22ch;line-height:1.3;
+  font-family:'Rye',serif;font-weight:400;
+  font-size:clamp(20px,3.9vw,38px);
+  background:linear-gradient(96deg,var(--bolt) 0%,var(--spark) 36%,var(--ember) 66%,var(--potion) 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 0 26px rgba(245,197,24,.26));
+  opacity:0;animation:fadeUp 1s .75s forwards, shimmer 9s linear .75s infinite;
 }
+@keyframes shimmer{to{background-position:220% center}}
 .scrollcue{
   position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
   font-size:10px;letter-spacing:.34em;text-transform:uppercase;
@@ -256,7 +274,7 @@ footer{text-align:center;padding:0 20px 70px;font-size:11px;
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
-  .eyebrow,h1,.tag,.scrollcue{opacity:1}
+  .eyebrow,h1,.tag,.cta-line,.scrollcue{opacity:1}
 }
 </style>
 </head>
@@ -269,7 +287,7 @@ footer{text-align:center;padding:0 20px 70px;font-size:11px;
     <div class="eyebrow">Landing page de aniversário pra mostrar serviço até nesse dia</div>
     <h1>Happy Bday,<span class="sub">Rodrigo Lattaro!!!</span></h1>
     <p class="tag">Mais um ano de felicidades, alegrias e muitos saltos quânticos de felicidade!</p>
-    <p class="tag cta-line">Bora pra apresentação??? Valendo… 🎬</p>
+    <p class="tag cta-line">Bora pra apresentação??? Valendo… <span class="clap">🎬</span></p>
     <div class="scrollcue">Role<span></span></div>
   </div>
 </header>
